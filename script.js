@@ -1,5 +1,5 @@
 // PLOT 1
-data = [
+data1 = [
   {
     x: ["CBR-5&#37;", "CBR-7&#37;", "CBR-10&#37;", "CBR-12&#37;", "CBR-15&#37;"],
     y: [200, 200, 200, 200, 200],
@@ -75,6 +75,91 @@ data = [
   {
     x: ["CBR-5&#37;", "CBR-7&#37;", "CBR-10&#37;", "CBR-12&#37;", "CBR-15&#37;"],
     y: [110, 100, 105, 100, 90],
+    type: "bar",
+    name: "AC/DBM",
+    xaxis: "x3",
+    barmode: "stack",
+    marker: { color: "15133C" },
+  },
+  
+];
+
+data2 = [
+  {
+    x: ["CBR-5&#37;", "CBR-7&#37;", "CBR-10&#37;", "CBR-12&#37;", "CBR-15&#37;"],
+    y: [200, 200, 200, 200, 200],
+    type: "bar",
+    name: "GSB",
+    xaxis: "x1",
+    barmode: "stack",
+    marker: { color: "C69B7B" },
+  },
+  {
+    x: [ "CBR-5&#37;", "CBR-7&#37;", "CBR-10&#37;", "CBR-12&#37;", "CBR-15&#37;"],
+    y: [250, 250, 250, 250, 250],
+    type: "bar",
+    name: "WMM",
+    xaxis: "x1",
+    barmode: "stack",
+    marker: { color: "B7B78A" },
+  },
+  {
+    x: ["CBR-5&#37;", "CBR-7&#37;", "CBR-10&#37;", "CBR-12&#37;", "CBR-15&#37;"],
+    y: [120, 100, 80, 80, 80],
+    type: "bar",
+    name: "AC/DBM",
+    xaxis: "x1",
+    barmode: "stack",
+    marker: { color: "15153C" },
+  },
+  {
+    x: ["CBR-5&#37;", "CBR-7&#37;", "CBR-10&#37;", "CBR-12&#37;", "CBR-15&#37;"],
+    y: [200, 200, 200, 200, 200],
+    type: "bar",
+    name: "GSB",
+    xaxis: "x2",
+    barmode: "stack",
+    marker: { color: "C69B7B" },
+  },
+  {
+    x: [ "CBR-5&#37;", "CBR-7&#37;", "CBR-10&#37;", "CBR-12&#37;", "CBR-15&#37;"],
+    y: [250, 250, 250, 250, 250],
+    type: "bar",
+    name: "WMM",
+    xaxis: "x2",
+    barmode: "stack",
+    marker: { color: "B7B78A" },
+  },
+  {
+    x: ["CBR-5&#37;", "CBR-7&#37;", "CBR-10&#37;", "CBR-12&#37;", "CBR-15&#37;"],
+    y: [150, 135, 120, 105, 90],
+    type: "bar",
+    name: "AC/DBM",
+    xaxis: "x2",
+    barmode: "stack",
+    marker: { color: "15133C" },
+  },
+  {
+    x: ["CBR-5&#37;", "CBR-7&#37;", "CBR-10&#37;", "CBR-12&#37;", "CBR-15&#37;"],
+    y: [200, 200, 200, 200, 200],
+    type: "bar",
+    name: "GSB",
+    xaxis: "x3",
+    barmode: "stack",
+    marker: { color: "C69B7B" },
+  },
+  {
+    x: [ "CBR-5&#37;", "CBR-7&#37;", "CBR-10&#37;", "CBR-12&#37;", "CBR-15&#37;"],
+    y: [250, 250, 250, 250, 250],
+    type: "bar",
+    name: "WMM",
+    xaxis: "x3",
+    barmode: "stack",
+    marker: { color: "B7B78A" },
+  },
+  {
+    x: ["CBR-5&#37;", "CBR-7&#37;", "CBR-10&#37;", "CBR-12&#37;", "CBR-15&#37;"],
+    y: [180, 165, 145, 140, 125],
     type: "bar",
     name: "AC/DBM",
     xaxis: "x3",
@@ -205,7 +290,7 @@ data = [
 //     showarrow: false,
 //   },
 // ];
-var layout = {
+var layout1 = {
   barmode: "stack",
   paper_bgcolor: "floralwhite",
   height: 700,
@@ -220,6 +305,44 @@ var layout = {
   // annotations: annotations,
   title:
     ' <b style="color:#f46074;">Design Flexible Pavement Thicknesses considering Emulsion Treated Base (ETB)</b> <br> Design MSA: 10, 25 and 50, Design CBR - 5%, 7%, 10%, 12% and 15% <br> IRC 37-2018',
+  yaxis: {
+    title: "Pavement Thickness, mm",
+    // range: [0, 110],
+    showgrid: true,
+    showline: true,
+    dtick: 50,
+    // gridcolor: "#e8dff5",
+  },
+  // yaxis: { tickformat: '%' },
+  xaxis: {
+    domain: [0, 0.33],
+    anchor: "x1",
+    title: "Design MSA=10 <br> Subgrade CBR=5-15%",
+  },
+  xaxis2: {
+    domain: [0.33, 0.66],
+    title: "Design MSA=25 <br> Subgrade CBR=5-15%",
+  },
+  xaxis3: {
+    domain: [0.67, 1.0],
+    title: "Design MSA=50 <br> Subgrade CBR=5-15%",
+  },
+};
+var layout2 = {
+  barmode: "stack",
+  paper_bgcolor: "floralwhite",
+  height: 700,
+  toImageButtonOptions: {
+    format: "svg", // one of png, svg, jpeg, webp
+    filename: "custom_image",
+    height: 600,
+    width: 900,
+    scale: 1, // Multiply title/legend/axis/canvas sizes by this factor
+  },
+  displaylogo: false,
+  // annotations: annotations,
+  title:
+    ' <b style="color:#f46074;">Design Flexible Pavement Thicknesses considering Unbound Base and Sub Base</b> <br> Design MSA: 10, 25 and 50, Design CBR - 5%, 7%, 10%, 12% and 15% <br> IRC 37-2018',
   yaxis: {
     title: "Pavement Thickness, mm",
     // range: [0, 110],
@@ -258,7 +381,8 @@ var config = {
   displaylogo: false,
 };
 
-Plotly.newPlot("myDiv1", data, layout, config);
+Plotly.newPlot("myDiv1", data1, layout1, config);
+Plotly.newPlot("myDiv2", data2, layout2, config);
 
 // PLOT 2
 
